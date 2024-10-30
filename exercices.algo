@@ -1,0 +1,36 @@
+ALGORITHM sentence;
+VAR
+  length, words, vowels: INTEGER;
+  sentc:STRING;
+  BEGIN
+  length:=1; //nbr of caractere
+  words:=1; 
+  vowels:=0;
+  write("type the sentence")
+  read(sentc)
+  FOR i FROM 0 TO (sentc[i]<>"." )DO
+
+  IF (sentc[i]="")THEN
+   words:=words+1; 
+ END_IF
+
+  IF (sentc[i] in ["a","e","u","i","o","y","A", "E", "U", "I", "O", "Y"]) THEN
+ vowels:=vowels+1;
+ END_IF
+
+  IF (length <>",",".","")
+ length:=length+1:
+  END_IF
+
+  END_FOR
+
+ write( "le nombre de caractere est ",length )
+
+ write (" le nombre de mot est ",words)
+
+ write (" le nombre de voyelle est ",vowels)
+END
+
+
+
+

@@ -1,0 +1,38 @@
+# Initialisation des compteurs pour les caractères, les mots et les voyelles
+compteur_caracteres = 0
+compteur_mots = 0
+compteur_voyelles = 0
+
+# Définition des voyelles (minuscules et majuscules)
+voyelles = "aeiouAEIOU"
+
+# Lecture de la phrase caractère par caractère
+print("Entrez une phrase se terminant par un point (.) :")
+phrase = input()
+
+# Vérification que la phrase se termine bien par un point
+if phrase[-1] != ".":
+    print("La phrase doit se terminer par un point.")
+else:
+    # Parcours de chaque caractère dans la phrase
+    for i, caractere in enumerate(phrase):
+        # Compter le caractère (sauf le point final)
+        if caractere != ".":
+            compteur_caracteres += 1
+
+        # Si le caractère est une voyelle, on l'ajoute au compteur de voyelles
+        if caractere in voyelles:
+            compteur_voyelles += 1
+
+        # Si un espace est rencontré, cela signifie la fin d'un mot
+        if caractere == " ":
+            compteur_mots += 1
+
+    # Compter le dernier mot avant le point (s'il y a des caractères)
+    if compteur_caracteres > 0:
+        compteur_mots += 1
+
+    # Affichage des résultats
+    print("Longueur de la phrase (sans le point final) :", compteur_caracteres)
+    print("Nombre de mots dans la phrase :", compteur_mots)
+    print("Nombre de voyelles dans la phrase :", compteur_voyelles)
